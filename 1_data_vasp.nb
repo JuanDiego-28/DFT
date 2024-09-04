@@ -1,0 +1,247 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8243,        239]
+NotebookOptionsPosition[      6742,        205]
+NotebookOutlinePosition[      7215,        223]
+CellTagsIndexPosition[      7172,        220]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Analysis of the data obtained with VASP", "Title",
+ CellChangeTimes->{{3.90311901701431*^9, 3.9031190476193857`*^9}, 
+   3.903119124943815*^9, {3.9050151158913336`*^9, 3.905015129775163*^9}, {
+   3.9054487690377293`*^9, 3.905448796759925*^9}, {3.905623246817008*^9, 
+   3.905623255472198*^9}, 3.9061418727923408`*^9, {3.9068297638990316`*^9, 
+   3.906829792455653*^9}, {3.908556432742813*^9, 3.9085564380179996`*^9}, {
+   3.908556468583948*^9, 3.908556473047738*^9}, {3.9085615446421623`*^9, 
+   3.9085615486162605`*^9}, {3.90907847843812*^9, 3.90907848848198*^9}, {
+   3.918239507018837*^9, 3.9182395154830136`*^9}},
+ TextAlignment->Center,ExpressionUUID->"b8b15d6d-bfe3-4e8e-b434-3cc240c1b505"],
+
+Cell[TextData[{
+ "Le\[OAcute]n ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["Oca\[NTilde]a", "1"], TraditionalForm]],ExpressionUUID->
+  "6cfd92da-df23-4048-9152-fa53e214736b"],
+ ", Yordan ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["Sol\[OAcute]rzano", "2"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5bdf5f6b-4e9e-4636-9cad-fdcebc4f09a8"],
+ ", Luis ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["Macas", "1"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "812bb1b4-3f46-4ad2-a27c-65cd36d8f763"],
+ ", ",
+ StyleBox["Juan Diego ",
+  IgnoreSpellCheck->True],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["Vizcaino", "1"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7a036fac-09e3-4a92-9515-23a62c3f650a"],
+ "\n"
+}], "Author",
+ CellChangeTimes->{{3.903119148511811*^9, 3.9031191859363728`*^9}, {
+   3.9031193626589165`*^9, 3.9031193667471066`*^9}, 3.903204249068986*^9, {
+   3.903204341343178*^9, 3.90320435591395*^9}, {3.918239529427969*^9, 
+   3.9182395696925235`*^9}},
+ TextAlignment->Center,ExpressionUUID->"6abe5368-486d-4cdf-988d-3fadc6ea47df"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[" ", "1"], TraditionalForm]],ExpressionUUID->
+  "a9337e58-7cdb-4041-876f-6fd3db0bcce0"],
+ "Group #2, School of Physical Science and Nanotechnology, Yachay Tech \
+University, Urcuqui - Ecuador"
+}], "Affiliation",
+ CellChangeTimes->{{3.9032042512727256`*^9, 3.9032042619680104`*^9}, {
+   3.903204359845121*^9, 3.9032043652785096`*^9}, 3.904040092613954*^9},
+ TextAlignment->Center,ExpressionUUID->"53e7a9cc-b406-4339-b222-5b6c7ce3aa8e"],
+
+Cell[CellGroupData[{
+
+Cell["Part 1: The Si atom", "Section",
+ CellChangeTimes->{{3.909078504595785*^9, 3.909078532416844*^9}, {
+  3.918239578123243*^9, 
+  3.9182396043914695`*^9}},ExpressionUUID->"aa5f1915-9345-4028-abd5-\
+7456f70ddb2b"],
+
+Cell["Let' s analyze the results", "Text",
+ CellChangeTimes->{{3.9182396067256727`*^9, 
+  3.918239617987447*^9}},ExpressionUUID->"94e08e1f-3597-4d2c-8504-\
+ab5986b88415"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "wrkdir", "=", "\[IndentingNewLine]", 
+   "\"\<\\Users\\LeDar\\wrk\\dft2024\\part1_si_atom\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "wrkdir", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.918239620498273*^9, 3.9182397024959655`*^9}, {
+  3.918239738655373*^9, 3.9182397536187325`*^9}},
+ EmphasizeSyntaxErrors->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"1d0c0b33-e9d0-42a6-9355-63183cc7f4c1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data1", "=", 
+   RowBox[{"Import", "[", "\"\<cell1.dat\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"data1", "//", "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.9182397085476446`*^9, 3.9182397273183727`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"7bcfb8b3-beba-4038-ae23-7079cb24e35f"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"4.`", "0.68273236`"},
+    {"5.`", "0.31476666`"},
+    {"6.`", "0.04787786`"},
+    {"7.`", 
+     RowBox[{"-", "0.08211319`"}]},
+    {"8.`", 
+     RowBox[{"-", "0.13451685`"}]},
+    {"9.`", 
+     RowBox[{"-", "0.15399123`"}]},
+    {"10.`", 
+     RowBox[{"-", "0.16089918`"}]},
+    {"11.`", 
+     RowBox[{"-", "0.1632889`"}]},
+    {"12.`", 
+     RowBox[{"-", "0.16407676`"}]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.9182397599860306`*^9, 3.918570532642537*^9},
+ CellLabel->
+  "Out[4]//TableForm=",ExpressionUUID->"ab1a74a6-26ea-422a-b015-860683d93edc"]
+}, Open  ]],
+
+Cell["\<\
+The following data was obtained with spin polarization in VASP (ISPIN=2)\
+\>", "Text",
+ CellChangeTimes->{{3.918239868726621*^9, 
+  3.9182399000296726`*^9}},ExpressionUUID->"ef50f5cd-1fe7-4cc5-a12f-\
+09af536bff96"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data2", "=", 
+   RowBox[{"Import", "[", "\"\<cell.dat\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"data2", "//", "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.9182399142250366`*^9, 3.918239918672323*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"4517d337-d767-4e27-bbab-f4be9bdc0635"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"4.`", 
+     RowBox[{"-", "0.1878664`"}]},
+    {"5.`", 
+     RowBox[{"-", "0.48054027`"}]},
+    {"6.`", 
+     RowBox[{"-", "0.70673951`"}]},
+    {"7.`", 
+     RowBox[{"-", "0.81686775`"}]},
+    {"8.`", 
+     RowBox[{"-", "0.86015898`"}]},
+    {"9.`", 
+     RowBox[{"-", "0.87606607`"}]},
+    {"10.`", 
+     RowBox[{"-", "0.88124897`"}]},
+    {"11.`", 
+     RowBox[{"-", "0.88292493`"}]},
+    {"12.`", 
+     RowBox[{"-", "0.88363996`"}]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.918240084196107*^9, 3.918570532674547*^9},
+ CellLabel->
+  "Out[6]//TableForm=",ExpressionUUID->"d11497ce-bd63-4d76-ba3b-53b7843496e7"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1141.2, 568.8},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"21385f1c-f62a-4f10-a731-792e1e5dea5f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 702, 9, 238, "Title",ExpressionUUID->"b8b15d6d-bfe3-4e8e-b434-3cc240c1b505"],
+Cell[1285, 33, 1126, 32, 86, "Author",ExpressionUUID->"6abe5368-486d-4cdf-988d-3fadc6ea47df"],
+Cell[2414, 67, 494, 10, 81, "Affiliation",ExpressionUUID->"53e7a9cc-b406-4339-b222-5b6c7ce3aa8e"],
+Cell[CellGroupData[{
+Cell[2933, 81, 215, 4, 100, "Section",ExpressionUUID->"aa5f1915-9345-4028-abd5-7456f70ddb2b"],
+Cell[3151, 87, 170, 3, 52, "Text",ExpressionUUID->"94e08e1f-3597-4d2c-8504-ab5986b88415"],
+Cell[3324, 92, 473, 11, 100, "Input",ExpressionUUID->"1d0c0b33-e9d0-42a6-9355-63183cc7f4c1"],
+Cell[CellGroupData[{
+Cell[3822, 107, 337, 7, 71, "Input",ExpressionUUID->"7bcfb8b3-beba-4038-ae23-7079cb24e35f"],
+Cell[4162, 116, 939, 30, 267, "Output",ExpressionUUID->"ab1a74a6-26ea-422a-b015-860683d93edc"]
+}, Open  ]],
+Cell[5116, 149, 224, 5, 52, "Text",ExpressionUUID->"ef50f5cd-1fe7-4cc5-a12f-09af536bff96"],
+Cell[CellGroupData[{
+Cell[5365, 158, 334, 7, 71, "Input",ExpressionUUID->"4517d337-d767-4e27-bbab-f4be9bdc0635"],
+Cell[5702, 167, 1000, 33, 267, "Output",ExpressionUUID->"d11497ce-bd63-4d76-ba3b-53b7843496e7"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
